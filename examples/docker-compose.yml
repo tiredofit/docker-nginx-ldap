@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+  nginx-ldap-app:
+    image: tiredofit/nginx-ldap
+    container_name: nginx-ldap-app
+    environment:
+    - VIRTUAL_HOST=nginx-ldap.hostname.com
+    - VIRTUAL_NETWORK=nginx-proxy
+    - VIRTUAL_PORT=80
+    - LETSENCRYPT_HOST=nginx-ldap.hostname.com
+    - LETSENCRYPT_EMAIL=user@hostname.com
+
+    - UPLOAD_MAX_SIZE=2G
+
+    - ZABBIX_HOSTNAME=nginx-ldap-app
+
+    - LDAP_HOST=ldap://ldapserver:389
+    - LDAP_BIND_DN=cn=binduser,dc=whatever,dc=org
+    - LDAP_BIND_PW=surepassword
+    - LDAP_BASE_DN=dc=hostname,dc=com
+    - LDAP_ATTRIBUTE=uid
+    - LDAP_SCOPE=sub
+    - LDAP_FILTER=(objectClass=*)
+    - LDAP_GROUP_ATTRIBUTE=uniquemember
+
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ./data:/www/html
+    - ./logs:/www/logs
+    networks:
+      - proxy-tier
+    restart: always
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy
