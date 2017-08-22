@@ -2,7 +2,7 @@
 
 # Introduction
 
-This will build a container for [Nginx] with LDAP Authentication (https://www.nginx.org) 
+This will build a container for [Nginx](https://www.nginx.org) w/ LDAP Authentication Enabled
 
 *    Tracks Mainline release channel
 *    Includes Zabbix Monitoring (nginx status) on port 73
