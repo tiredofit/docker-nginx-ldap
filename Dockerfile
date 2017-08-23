@@ -63,16 +63,17 @@ MAINTAINER Dave Conroy <dave at tiredofit dot ca>
 			pcre-dev \
 			zlib-dev \
 			linux-headers \
-			curl \
+                        tar \ 
 			gnupg \
 			libxslt-dev \
 			gd-dev \
 			geoip-dev \
 			perl-dev \
 			openldap-dev && \
-		mkdir -p /usr/src/nginx-auth-ldap /www /www/logs/nginx && \
-	    curl https://codeload.github.com/kvspb/nginx-auth-ldap/tar.gz/master | tar xz --strip=1 -C /usr/src/nginx-auth-ldap && \
-		curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz && \
+	mkdir -p /usr/src/nginx-auth-ldap /www /www/logs/nginx && \
+
+        curl https://codeload.github.com/kvspb/nginx-auth-ldap/tar.gz/master | tar xz --strip=1 -C /usr/src/nginx-auth-ldap && \
+	curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz && \
         curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc && \
         export GNUPGHOME="$(mktemp -d)" && \
         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEYS" && \
