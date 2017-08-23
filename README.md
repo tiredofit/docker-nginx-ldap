@@ -74,7 +74,7 @@ Automated builds of the image are available on [Registry](https://hub.docker.com
 
 
 ```bash
-docker pull hub.docker.com/tiredofit/nginx
+docker pull hub.docker.com/tiredofit/nginx-ldap
 ```
 
 # Quick Start
