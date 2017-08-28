@@ -133,11 +133,11 @@ MAINTAINER Dave Conroy <dave at tiredofit dot ca>
 		ln -sf /dev/stdout /var/log/nginx/access.log && \
 		ln -sf /dev/stderr /var/log/nginx/error.log && \
 		mkdir -p /www /www/logs/nginx && \
-        rm -rf /usr/src/* /var/tmp/* /var/cache/apk/*
+                rm -rf /usr/src/* /var/tmp/* /var/cache/apk/* && \
 
 
 ### WWW  Installation
-      mkdir -p /www/logs
+                mkdir -p /www/logs
 
 ### Files Addition
   ADD install /
