@@ -135,23 +135,16 @@ MAINTAINER Dave Conroy <dave at tiredofit dot ca>
 		mkdir -p /www /www/logs/nginx && \
         rm -rf /usr/src/* /var/tmp/* /var/cache/apk/*
 
-   ADD  install/nginx /etc/nginx
 
-### S6 Setup
-   ADD install/s6 /etc/s6
-   ADD install/cont-init.d /etc/cont-init.d
-   RUN chmod +x /etc/cont-init.d/*.sh
+### WWW  Installation
+      mkdir -p /www/logs
 
-### Logrotate Setup
-   ADD install/logrotate.d /etc/logrotate.d
+### Files Addition
+  ADD install /
 
-### Networking Setup
-   EXPOSE 80 443
-
-### Zabbix Setup 
-   ADD install/zabbix /etc/zabbix
-   RUN chmod +x /etc/zabbix/zabbix_agentd.conf.d/nginx-status.sh && \
-       chown -R zabbix /etc/zabbix
+### Networking Configuration
+  EXPOSE 80
 
 ### Entrypoint Configuration
-   ENTRYPOINT ["/init"]
+  ENTRYPOINT ["/init"]
+

@@ -1,3 +1,7 @@
+## 3.0 2017-08-27 <dave at tiredofit dot ca>
+
+* Major Release Bump to support Base Image
+
 ## 2.3 2017-07-13 <dave at tiredofit dot ca>
 
 * Updated Initialization Routines via cont-init.d
