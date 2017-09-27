@@ -2,11 +2,10 @@ FROM tiredofit/alpine:3.4
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Set Nginx Version Number
-   ENV NGINX_VERSION 1.13.4
+   ENV NGINX_VERSION 1.13.5
 
 ### Install Nginx
-   RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 && \
-	   CONFIG="\
+   RUN CONFIG="\
 			--prefix=/etc/nginx \
 			--sbin-path=/usr/sbin/nginx \
 			--modules-path=/usr/lib/nginx/modules \
@@ -70,25 +69,9 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 			geoip-dev \
 			perl-dev \
 			openldap-dev && \
-	    mkdir -p /usr/src/nginx-auth-ldap /www /www/logs/nginx && \
+	mkdir -p /usr/src/nginx-auth-ldap /www /www/logs/nginx && \
         curl https://codeload.github.com/kvspb/nginx-auth-ldap/tar.gz/master | tar xz --strip=1 -C /usr/src/nginx-auth-ldap && \
-	    curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz && \
-        curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc && \
-        export GNUPGHOME="$(mktemp -d)" && \
-	    found=''; \
-			for server in \
-				ha.pool.sks-keyservers.net \
-				hkp://keyserver.ubuntu.com:80 \
-				hkp://p80.pool.sks-keyservers.net:80 \
-				pgp.mit.edu \
-				hkp://keyserver.ubuntu.com:80 \
-			; do \
-				echo "Fetching GPG key $GPG_KEYS from $server"; \
-				gpg --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$GPG_KEYS" && found=yes && break; \
-		    done; \
-	    test -z "$found" && echo >&2 "error: failed to fetch GPG key $GPG_KEYS" && exit 1; \
-	    gpg --batch --verify nginx.tar.gz.asc nginx.tar.gz && \
-	    rm -r "$GNUPGHOME" nginx.tar.gz.asc && \
+	curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz && \
         mkdir -p /usr/src && \
         tar -zxC /usr/src -f nginx.tar.gz && \
         rm nginx.tar.gz && \

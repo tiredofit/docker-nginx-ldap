@@ -1,3 +1,7 @@
+## 3.1 2017-09-27 <dave at tiredofit dot ca>
+
+* Fix Build Issues
+
 ## 3.0 2017-08-27 <dave at tiredofit dot ca>
 
 * Major Release Bump to support Base Image
