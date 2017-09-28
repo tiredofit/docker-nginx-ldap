@@ -2,7 +2,7 @@ FROM tiredofit/alpine:3.4
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Set Nginx Version Number
-   ENV NGINX_VERSION 1.13.5
+   ENV NGINX_VERSION=1.13.5
 
 ### Install Nginx
    RUN CONFIG="\
