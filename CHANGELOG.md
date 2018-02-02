@@ -1,3 +1,20 @@
+## 3.4 2018-02-01 <dave at tiredofit dot ca>
+
+* Rebase
+
+## 3.3 2018-01-29 <dave at tiredofit dot ca>
+
+* Update Nginx to 1.13.8
+* Update Zabbix Scripts
+
+## 3.2 2017-12-01 <dave at tiredofit dot ca>
+
+* Update Base to Alpine 3.7
+
+## 3.11 2017-12-01 <dave at tiredofit dot ca>
+
+* Bump Nginx Version 1.13.7
+
 ## 3.1 2017-09-27 <dave at tiredofit dot ca>
 
 * Fix Build Issues

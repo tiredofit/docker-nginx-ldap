@@ -11,7 +11,7 @@ sleep 2
 
 	### Check to see if this is a new install, if yes create directories...
 	if [ ! -f /www/html/index.html ] ; then
-	   echo "** [10-nginx] No Files found - New Installation Detected......"
+	   echo "** [nginx-ldap] No Files found - New Installation Detected......"
 	   mkdir -p /www/html
 	   touch /www/html/index.html
 	   chown nginx /www/html
@@ -28,6 +28,6 @@ sleep 2
 fi
 
 echo ''
-echo '** Starting nginx..'
+echo '** [nginx-ldap] Starting nginx'
 exec nginx
 
