@@ -1,3 +1,15 @@
+## 3.7 2018-04-02 <dave at tiredofit dot ca>
+
+* Added MAINTENANCE environment variable to move system to maintenance mode. Also maintenance script (off/on/sleep 60) inside container.
+
+## 3.6 2018-02-20 <dave at tiredofit dot ca>
+
+* Fix Startup issues with missing logfiles
+
+## 3.5 2018-02-20 <dave at tiredofit dot ca>
+
+* Add Reverse Proxy Detection
+
 ## 3.4 2018-02-01 <dave at tiredofit dot ca>
 
 * Rebase
