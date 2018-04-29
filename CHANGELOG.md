@@ -1,3 +1,8 @@
+## 4.0 2018-04-28 <dave at tiredofit dot ca>
+
+* Ability to protect service via basic authentication or using LemonLDAP:NG Handlers
+
+
 ## 3.7 2018-04-02 <dave at tiredofit dot ca>
 
 * Added MAINTENANCE environment variable to move system to maintenance mode. Also maintenance script (off/on/sleep 60) inside container.

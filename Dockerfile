@@ -121,7 +121,7 @@ LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
           | sort -u \
       )" ; \
       apk add --no-cache --virtual .nginx-rundeps $runDeps ; \
-      apk add --no-cache openldap ; \
+      apk add --no-cache apache2-utils openldap ; \
       apk del .nginx-build-deps ; \
       apk del .gettext ; \
       mv /tmp/envsubst /usr/local/bin/ ; \
