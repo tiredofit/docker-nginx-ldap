@@ -1,4 +1,10 @@
-# hub.docker.com/tiredofit/nginx-ldap
+# hub.docker.com/r/tiredofit/nginx-ldap
+
+[![Build Status](https://img.shields.io/docker/build/tiredofit/nginx-ldap.svg)](https://hub.docker.com/r/tiredofit/nginx-ldap)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tiredofit/nginx-ldap.svg)](https://hub.docker.com/r/tiredofit/nginx-ldap)
+[![Docker Stars](https://img.shields.io/docker/stars/tiredofit/nginx-ldap.svg)](https://hub.docker.com/r/tiredofit/nginx-ldap)
+[![Docker 
+Layers](https://images.microbadger.com/badges/image/tiredofit/nginx-ldap.svg)](https://microbadger.com/images/tiredofit/nginx-ldap)
 
 # Introduction
 
@@ -75,7 +81,7 @@ Automated builds of the image are available on [Docker Hub](https://hub.docker.c
 
 
 ```bash
-docker pull hub.docker.com/tiredofit/nginx-ldap
+docker pull tiredofit/nginx-ldap
 ```
 
 # Quick Start
