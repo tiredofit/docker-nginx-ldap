@@ -1,8 +1,8 @@
-FROM tiredofit/alpine:3.8-latest
+FROM tiredofit/alpine:3.9
 LABEL maintainer="Dave Conroy (dave at tiredofit dot ca)"
 
 ### Build Nginx
-    ENV NGINX_VERSION=1.15.3 \
+    ENV NGINX_VERSION=1.16.0 \
         ZABBIX_HOSTNAME=nginx-ldap
 
     RUN set -x ; \
